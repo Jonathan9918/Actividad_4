@@ -6,6 +6,26 @@ void mostrar(int n, char arreglo[]);
 void capturar();
 int n;
 
+struct Personaje{
+    char nombre[15], tipo[15];
+    int fuerza, salud;
+}personaje[5];
+
+void capturar()
+{
+    for(int j=1;j<=5;j++)
+    {
+        printf("\nIntroduce el nombre del personaje numero %d: ", j);
+        scanf("\n%s",&personaje[j].nombre[15]);
+        printf("\nIntroduce su tipo: ");
+        scanf("\n%s",&personaje[j].tipo[15]);
+        printf("\nIntroduce sus puntos de salud: ");
+        scanf("\n%d",&personaje[j].salud);
+        printf("\nIntroduce sus puntos de fuerza: ");
+        scanf("\n%d",&personaje[j].fuerza);
+    }
+}
+
 void mostrar(int n, char arreglo[])
 {
     printf("\nImprimiendo...");
@@ -45,4 +65,8 @@ int main(){
     fflush(stdin);
     scanf("%d",&n);
     mostrar(n, arreglo);
+    printf("\nPresione<enter>para continuar a la tercera parte");
+    getch();
+    printf("\n3.-");
+    capturar();
 }
